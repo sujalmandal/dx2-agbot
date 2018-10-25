@@ -19,7 +19,7 @@ socialBattles=0
 loopCount=0
 #define info method
 def printInfo():
-    Debug.user("-----------------------------------------"+str(loopCount)+"-------------------------------------")
+    Debug.user("------------------------------------------------------------------------------")
     Debug.user( "auraGateEnteredTimes="+str(auraGateEnteredTimes)+" normalBattles="+str(normalBattles))
     Debug.user( "socialBattles="+str(socialBattles)+" gatekeepersAvoided="+str(gatekeepersAvoided))
     Debug.user( "healsAvoided="+str(healsAvoided)+" floorsChanged="+str(floorsChanged))
@@ -28,6 +28,8 @@ def printInfo():
 #main bot logic
 Debug.user("starting the bot..")
 while True:
+    loopCount+=1
+    Debug.user("running detection loop no: "+str(loopCount))
     printInfo()
     if exists("LeveIExp.png"):
         click("nextBtn1.png")
@@ -35,13 +37,15 @@ while True:
         click("expScreenNextBtn.png")
         wait("AcquiredScreen.png",15)
         click("itemScreenNextBtn.png")
+        Debug.user("normal battle")
         normalBattles+=1
         continue
     if exists("1540225519391-1.png"):
+        Debug.user("social battle")        
         click("1540225519391-1.png")
-        wait("withthisParty.png",FOREVER)
+        wait("withthisParty.png",30)
         click("GoWithThisPartySocialBattle.png")
-        wait("SocialBattleExpScreen.png",FOREVER)
+        wait("SocialBattleExpScreen.png",30)
         click("nextBtn1.png")
         wait("ExpScreen.png",10)
         click("expScreenNextBtn.png")
@@ -51,8 +55,9 @@ while True:
         click("1540225712595-1.png")
         socialBattles+=1
         continue
-    if exists("GateKeeperFirstScreen.png"):
-        click("GateKeeperFirstScreen.png")
+    if exists("gatekeeper.png"):
+        Debug.user("gatekeeper")        
+        click("gatekeeper.png")
         wait("dontFightBtn.png",10)
         click("dontFightBtn.png")
         wait(1)
@@ -60,9 +65,10 @@ while True:
         gatekeepersAvoided+=1
         continue
     if exists("FloorBossScreen.png"):
+        Debug.user("floor boss battle")        
         floorBossEncountered+=1
         click("Enter.png")
-        wait("LeveIExp.png",FOREVER)
+        wait("LeveIExp.png",30)
         click("nextBtn1.png")
         wait("ExpScreen.png",10)
         click("expScreenNextBtn.png")
@@ -77,6 +83,7 @@ while True:
             floorsChanged+=1
         continue
     if exists("MaidenoftheSpringScreen.png"):
+        Debug.user("healer")        
         click("lost.png")
         wait(1)
         click("heal.png")
@@ -85,6 +92,7 @@ while True:
         healsAvoided+=1
         continue
     if exists("ItsAMAGchest.png"):
+        Debug.user("mag chest")        
         click("MAG.png")
         wait(2)
         click("Ignore.png")
@@ -93,11 +101,13 @@ while True:
         magChestsAvoided+=1
         continue
     if exists("TheAuraGateClosedMsg.png"):
+        Debug.user("ag closed")        
         click("1540224949090-1.png")
         wait("1540224992674-1.png",20)
         click("1540225008178-1.png")
         continue    
     if exists("1540225947641-1.png"):
+        Debug.user("entering ag")        
         click("1540223058893-1.png")
         wait("1540223140256-1.png",10)
         click("1540223140256-1.png")
@@ -112,6 +122,7 @@ while True:
             auraGateEnteredTimes+=1
         continue
     if exists("1540225798213.png"):
+        Debug.user("connection error")        
         click("1540225810310.png")
         wait(1)
         if exists("AutoMoveBtn.png"):
