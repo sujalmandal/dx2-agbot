@@ -1,5 +1,11 @@
 #setThrowException(False)
 setFindFailedResponse(PROMPT)
+#define the logger
+Settings.UserLogs = True
+Settings.UserLogPrefix = "agbot"
+Settings.UserLogTime = True
+Debug.setUserLogFile("dx2-bot-log.txt")
+
 #define the counters
 gatekeepersAvoided=0
 healsAvoided=0
@@ -10,17 +16,17 @@ connectionIssues=0
 auraGateEnteredTimes=0
 normalBattles=0
 socialBattles=0
+loopCount=0
 #define info method
 def printInfo():
-    print "---------------------------------------------------------------------------------------------"
-    print "auraGateEnteredTimes="+str(auraGateEnteredTimes)+" normalBattles="+str(normalBattles)
-    print "socialBattles="+str(socialBattles)+" gatekeepersAvoided="+str(gatekeepersAvoided)
-    print "healsAvoided="+str(healsAvoided)+" floorsChanged="+str(floorsChanged)
-    print "floorBossEncountered="+str(floorBossEncountered)+" magChestsAvoided="+str(magChestsAvoided)
+    Debug.user("-----------------------------------------"+str(loopCount)+"-------------------------------------")
+    Debug.user( "auraGateEnteredTimes="+str(auraGateEnteredTimes)+" normalBattles="+str(normalBattles))
+    Debug.user( "socialBattles="+str(socialBattles)+" gatekeepersAvoided="+str(gatekeepersAvoided))
+    Debug.user( "healsAvoided="+str(healsAvoided)+" floorsChanged="+str(floorsChanged))
+    Debug.user( "floorBossEncountered="+str(floorBossEncountered)+" magChestsAvoided="+str(magChestsAvoided))
     
 #main bot logic
-print "starting the bot.."
-printInfo()
+Debug.user("starting the bot..")
 while True:
     printInfo()
     if exists("LeveIExp.png"):
