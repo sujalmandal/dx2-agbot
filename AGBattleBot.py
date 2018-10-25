@@ -4,7 +4,7 @@ setFindFailedResponse(PROMPT)
 Settings.UserLogs = True
 Settings.UserLogPrefix = "agbot"
 Settings.UserLogTime = True
-Debug.setUserLogFile("dx2-bot-log.txt")
+Debug.setUserLogFile("dx2-bot.log")
 
 #define the counters
 gatekeepersAvoided=0
@@ -123,7 +123,7 @@ while True:
         continue
     if exists("1540225798213.png"):
         Debug.user("connection error")        
-        click("1540225810310.png")
+        click("greenBtn.png")
         wait(1)
         if exists("AutoMoveBtn.png"):
             click("AutoMoveBtn.png")
