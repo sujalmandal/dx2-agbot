@@ -33,9 +33,9 @@ while True:
     printInfo()
     if exists("LeveIExp.png"):
         click("nextBtn1.png")
-        wait("ExpScreen.png",15)
+        wait("ExpScreen.png",FOREVER)
         click("expScreenNextBtn.png")
-        wait("AcquiredScreen.png",15)
+        wait("AcquiredScreen.png",FOREVER)
         click("itemScreenNextBtn.png")
         Debug.user("normal battle")
         normalBattles+=1
@@ -43,22 +43,25 @@ while True:
     if exists("1540225519391-1.png"):
         Debug.user("social battle")        
         click("1540225519391-1.png")
-        wait("withthisParty.png",30)
+        wait("withthisParty.png",FOREVER)
         click("GoWithThisPartySocialBattle.png")
-        wait("SocialBattleExpScreen.png",30)
+        wait("SocialBattleExpScreen.png",60)
+        if exists("attack.png"):
+            click("attack.png")
+        wait("SocialBattleExpScreen.png",FOREVER)
         click("nextBtn1.png")
-        wait("ExpScreen.png",10)
+        wait("ExpScreen.png",FOREVER)
         click("expScreenNextBtn.png")
-        wait("AcquiredScreen.png",10)
+        wait("AcquiredScreen.png",FOREVER)
         click("itemScreenNextBtn.png")        
-        wait("1540225712595-1.png",20)
+        wait("1540225712595-1.png",FOREVER)
         click("1540225712595-1.png")
         socialBattles+=1
         continue
     if exists("gatekeeper.png"):
         Debug.user("gatekeeper")        
         click("gatekeeper.png")
-        wait("dontFightBtn.png",10)
+        wait("dontFightBtn.png",FOREVER)
         click("dontFightBtn.png")
         wait(1)
         click("ignoreMessage.png")
@@ -68,11 +71,11 @@ while True:
         Debug.user("floor boss battle")        
         floorBossEncountered+=1
         click("Enter.png")
-        wait("LeveIExp.png",30)
+        wait("LeveIExp.png",FOREVER)
         click("nextBtn1.png")
-        wait("ExpScreen.png",10)
+        wait("ExpScreen.png",FOREVER)
         click("expScreenNextBtn.png")
-        wait("AcquiredScreen.png",10)
+        wait("AcquiredScreen.png",FOREVER)
         click("itemScreenNextBtn.png")
         wait(10)
         if exists("T0nextoor.png"):
@@ -103,21 +106,22 @@ while True:
     if exists("TheAuraGateClosedMsg.png"):
         Debug.user("ag closed")        
         click("1540224949090-1.png")
-        wait("1540224992674-1.png",20)
+        wait("1540224992674-1.png",FOREVER)
         click("1540225008178-1.png")
         continue    
     if exists("1540225947641-1.png"):
         Debug.user("entering ag")        
         click("1540223058893-1.png")
-        wait("1540223140256-1.png",10)
+        wait("1540223140256-1.png",FOREVER)
         click("1540223140256-1.png")
         wait("boostModebtn.png",FOREVER)
         click("boostModebtn.png")
-        wait("1540223270060-1.png",10)
+        wait("1540223270060-1.png",FOREVER)
         click("1540223295983-1.png")
         click("1540223356357-1.png")
         wait(10)
         if exists("AutoMoveBtn.png"):
+            wait(3)
             click("AutoMoveBtn.png")
             auraGateEnteredTimes+=1
         continue
