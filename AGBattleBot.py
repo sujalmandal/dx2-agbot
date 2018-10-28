@@ -45,9 +45,9 @@ while True:
         click("1540225519391-1.png")
         wait("withthisParty.png",FOREVER)
         click("GoWithThisPartySocialBattle.png")
-        wait("SocialBattleExpScreen.png",60)
-        if exists("attack.png"):
-            click("attack.png")
+        if not exists("SocialBattleExpScreen.png",30):
+            if exists("attack.png"):
+                click("attack.png")
         wait("SocialBattleExpScreen.png",FOREVER)
         click("nextBtn1.png")
         wait("ExpScreen.png",FOREVER)
