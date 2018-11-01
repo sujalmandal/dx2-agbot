@@ -31,7 +31,7 @@ while True:
     loopCount+=1
     Debug.user("running detection loop no: "+str(loopCount))
     printInfo()
-    if exists("LeveIExp.png"):
+    if exists("LeveIExp.png",0):
         click("nextBtn1.png")
         wait("ExpScreen.png",FOREVER)
         click("expScreenNextBtn.png")
@@ -40,7 +40,7 @@ while True:
         Debug.user("normal battle")
         normalBattles+=1
         continue
-    if exists("1540225519391-1.png"):
+    if exists("1540225519391-1.png",0):
         Debug.user("social battle")        
         click("1540225519391-1.png")
         wait("withthisParty.png",FOREVER)
@@ -59,7 +59,7 @@ while True:
         click("1540225712595-1.png")
         socialBattles+=1
         continue
-    if exists("gatekeeper.png"):
+    if exists("gatekeeper.png",0):
         Debug.user("gatekeeper")        
         click("gatekeeper.png")
         wait("dontFightBtn.png",FOREVER)
@@ -68,7 +68,7 @@ while True:
         click("ignoreMessage.png")
         gatekeepersAvoided+=1
         continue
-    if exists("FloorBossScreen.png"):
+    if exists("FloorBossScreen.png",0):
         Debug.user("floor boss battle")        
         floorBossEncountered+=1
         click("Enter.png")
@@ -86,7 +86,7 @@ while True:
             click("AutoMoveBtn.png")
             floorsChanged+=1
         continue
-    if exists("MaidenoftheSpringScreen.png"):
+    if exists("MaidenoftheSpringScreen.png",0):
         Debug.user("healer")        
         click("lost.png")
         wait(1)
@@ -95,7 +95,7 @@ while True:
         click("Leave.png")
         healsAvoided+=1
         continue
-    if exists("ItsAMAGchest.png"):
+    if exists("ItsAMAGchest.png",0):
         Debug.user("mag chest")        
         click("MAG.png")
         wait(2)
@@ -104,13 +104,13 @@ while True:
         click("ignore-1.png")
         magChestsAvoided+=1
         continue
-    if exists("TheAuraGateClosedMsg.png"):
+    if exists("TheAuraGateClosedMsg.png",0):
         Debug.user("ag closed")        
         click("1540224949090-1.png")
         wait("1540224992674-1.png",FOREVER)
         click("1540225008178-1.png")
         continue    
-    if exists("1540225947641-1.png"):
+    if exists("1540225947641-1.png",0):
         Debug.user("entering ag")        
         click("1540223058893-1.png")
         wait("1540223140256-1.png",FOREVER)
@@ -126,7 +126,7 @@ while True:
             click("AutoMoveBtn.png")
             auraGateEnteredTimes+=1
         continue
-    if exists("1540225798213.png"):
+    if exists("1540225798213.png",0):
         Debug.user("connection error")        
         click("greenBtn.png")
         wait(1)
