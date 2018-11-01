@@ -47,7 +47,7 @@ while True:
         click("GoWithThisPartySocialBattle.png")
         if exists("SocialBattleExpScreen.png",30):
             click("nextBtn1.png")
-        if exists("attack.png"):
+        if exists("attack.png",0):
             click("attack.png")
             wait("SocialBattleExpScreen.png",FOREVER)
             click("nextBtn1.png")
@@ -122,7 +122,6 @@ while True:
         click("1540223356357-1.png")
         wait(10)
         if exists("AutoMoveBtn.png"):
-            wait(3)
             click("AutoMoveBtn.png")
             auraGateEnteredTimes+=1
         continue
