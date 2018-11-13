@@ -59,15 +59,6 @@ while True:
         click("1540225712595-1.png")
         socialBattles+=1
         continue
-    if exists("gatekeeper.png",0):
-        Debug.user("gatekeeper")        
-        click("gatekeeper.png")
-        wait("dontFightBtn.png",FOREVER)
-        click("dontFightBtn.png")
-        wait(1)
-        click("ignoreMessage.png")
-        gatekeepersAvoided+=1
-        continue
     if exists("FloorBossScreen.png",0):
         Debug.user("floor boss battle")        
         floorBossEncountered+=1
@@ -86,6 +77,15 @@ while True:
             click("AutoMoveBtn.png")
             floorsChanged+=1
         continue
+    if exists("gatekeeper.png",0):
+        Debug.user("gatekeeper")        
+        click("gatekeeper.png")
+        wait("dontFightBtn.png",FOREVER)
+        click("dontFightBtn.png")
+        wait(1)
+        click("ignoreMessage.png")
+        gatekeepersAvoided+=1
+        continue    
     if exists("MaidenoftheSpringScreen.png",0):
         Debug.user("healer")        
         click("lost.png")
@@ -128,8 +128,11 @@ while True:
     if exists("1540225798213.png",0):
         Debug.user("connection error")        
         click("greenBtn.png")
-        wait(1)
+        wait(3)
         if exists("AutoMoveBtn.png"):
             click("AutoMoveBtn.png")
             connectionIssues+=1
+        continue
+    if exists("AutoMoveBtn.png",0):
+        click("AutoMoveBtn.png")
         continue
