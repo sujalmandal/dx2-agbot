@@ -1,3 +1,4 @@
+# depricated version, i am not maintaining this anymore because i left the game, still if you have any questions say hi at ss6sujal@gmail.com
 # dx2-agbot
 an simple bot for automatically exploring auragate in dx2 smt game using sikuli scripting
 
